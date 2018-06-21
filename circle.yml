@@ -1,6 +1,7 @@
 machine:
   node:
     version: 8.1.4
+
 version: 2
 jobs:
   build:
@@ -12,6 +13,10 @@ jobs:
 
     steps:
       - checkout
+      - run:
+        name: Deploy Master to Heroku
+        command: |
+          git push https://heroku:f480b96d-2c7a-4603-b8f2-bfcd4edbde34@git.heroku.com/nm-ops200-deliver-it-well.git master
 
       # Download and cache dependencies
       - restore_cache:
@@ -30,16 +35,6 @@ jobs:
       # run tests!
       - run: yarn test
     
-    
-deploy:
-  docker:
-    - image: circleci/node:8.11
-  steps:
-    - checkout
-    - run:
-        name: Deploy Master to Heroku
-        command: |
-          git push https://heroku:f480b96d-2c7a-4603-b8f2-bfcd4edbde34@git.heroku.com/nm-ops200-deliver-it-well.git master
 
 workflows:
   version: 2
