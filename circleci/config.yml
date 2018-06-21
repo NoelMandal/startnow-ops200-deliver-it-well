@@ -1,8 +1,0 @@
-deployment:
-  prod:
-    branch: master
-    heroku:
-      appname: nm-ops200-deliver-it-well
-machine:
-  node:
-    version: 8.1.4
