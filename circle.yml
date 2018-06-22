@@ -38,7 +38,7 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: |
-            git push https://heroku:f480b96d-2c7a-4603-b8f2-bfcd4edbde34@git.heroku.com/nm-ops200-deliver-it-well.git master
+            git push https://heroku:heroku_api_key@git.heroku.com/nm-ops200-deliver-it-well.git master
 
 workflows:
   version: 2
